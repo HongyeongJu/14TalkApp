@@ -2,13 +2,41 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LoginButton"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
-    android:background="@color/purple_700">
+    android:background="@color/purple_700"
+    tools:context=".LoginActivity">
 
 
     <com.github.florent37.materialtextfield.MaterialTextField
+        android:id="@+id/materialTextField2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialTextField"
+        app:layout_constraintVertical_bias="0.104"
+        app:mtf_animationDuration="500"
+        app:mtf_cardCollapsedHeight="4dp"
+        app:mtf_image="@drawable/password_icon">
+
+        <EditText
+            android:id="@+id/pw_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:textColor="#333"
+            android:textSize="25sp" />
+
+    </com.github.florent37.materialtextfield.MaterialTextField>
+
+    <com.github.florent37.materialtextfield.MaterialTextField
+        android:id="@+id/materialTextField"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -16,7 +44,8 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.382"
+        app:layout_constraintVertical_bias="0.48"
+        app:mtf_animationDuration="500"
         app:mtf_cardCollapsedHeight="4dp"
         app:mtf_image="@drawable/id_icon">
 
@@ -24,33 +53,35 @@
             android:id="@+id/id_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Id"
+            android:autofillHints=""
+            android:hint="@string/id"
+            android:inputType="textWebEmailAddress|textEmailAddress"
             android:textColor="#333"
             android:textSize="25sp" />
 
     </com.github.florent37.materialtextfield.MaterialTextField>
 
-    <com.github.florent37.materialtextfield.MaterialTextField
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/universitylogo"
+        app:layout_constraintBottom_toTopOf="@+id/materialTextField"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.505"
-        app:mtf_cardCollapsedHeight="4dp"
-        app:mtf_image="@drawable/id_icon">
+        app:layout_constraintVertical_bias="0.666" />
 
-        <EditText
-            android:id="@+id/pw_editText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
-            android:textColor="#333"
-            android:textSize="25sp" />
-
-    </com.github.florent37.materialtextfield.MaterialTextField>
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialTextField2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
